@@ -30,7 +30,7 @@ public class ApplicationService {
     }
 
     public ApplicationDto registerApplication(ApplicationDto request) {
-
+        log.info("Inside register application service");
         AccountType accountType = accountTypeRepository.findByName(request.getAccountType())
                 .orElseThrow(() -> new ResourceNotFoundException("Account Type is not found"));
 
