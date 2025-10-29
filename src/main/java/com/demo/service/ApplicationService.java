@@ -32,10 +32,10 @@ public class ApplicationService {
     public ApplicationDto registerApplication(ApplicationDto request) {
         log.info("Inside register application service");
         AccountType accountType = accountTypeRepository.findByName(request.getAccountType())
-                .orElseThrow(() -> new ResourceNotFoundException("Account Type is not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Account Type not found"));
 
         Platform platform = platformRepository.findByName(request.getPlatform())
-                .orElseThrow(() -> new ResourceNotFoundException("Platform is not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Platform not found"));
 
         Application application = new Application();
         application.setName(request.getName());

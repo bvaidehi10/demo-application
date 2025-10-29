@@ -90,7 +90,7 @@ public class ApplicationServiceTest {
         ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () ->
                         applicationService.registerApplication(dto));
 
-        assertEquals("Account Type is not found", ex.getMessage());
+        assertEquals("Account Type not found", ex.getMessage());
     }
 
     @Test
@@ -106,6 +106,6 @@ public class ApplicationServiceTest {
         ResourceNotFoundException ex = assertThrows(ResourceNotFoundException.class, () ->
                         applicationService.registerApplication(dto));
 
-        assertEquals("Platform is not found", ex.getMessage());
+        assertEquals("Platform not found", ex.getMessage());
     }
 }
