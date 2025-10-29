@@ -22,7 +22,7 @@ public class ApplicationController {
 
     @PostMapping("/register")
     public ResponseEntity<ApplicationDto> registerApplication(@Valid @RequestBody ApplicationDto request) {
-        log.info("Register Application");
+        log.info("Inside Register Application");
         ApplicationDto applicationDto = applicationService.registerApplication(request);
         return new ResponseEntity<>(applicationDto, HttpStatus.CREATED);
     }
